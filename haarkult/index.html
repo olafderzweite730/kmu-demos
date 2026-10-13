@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>haarkult GmbH – Naturcoiffeur in Luzern, seit 1967</title>
+<meta name="description" content="haarkult GmbH – Naturcoiffeur in Luzern. Pflanzenfarben in Bio-Qualität, Haarwachsbehandlung, Frisur & Make-up. Termin online buchen: Tribschenstrasse 30, 6005 Luzern.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<style>
+  :root {
+    --pico-primary: #9a5b3c;
+    --pico-primary-hover: #84492e;
+    --pico-primary-focus: rgba(154, 91, 60, 0.25);
+    --pico-primary-inverse: #fffaf6;
+    --pico-background-color: #faf6f0;
+    --pico-h1-color: #33241c;
+    --pico-h2-color: #33241c;
+    --pico-h3-color: #4a3428;
+    --pico-color: #4a3a30;
+    --pico-muted-color: #8a7668;
+    --pico-border-radius: 1rem;
+    --pico-typography-spacing-vertical: 1.6rem;
+  }
+  h1, h2, h3, .serif { font-family: Georgia, "Times New Roman", serif; letter-spacing: .01em; }
+  header.nav { position: sticky; top: 0; z-index: 10; background: rgba(250,246,240,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #eadfd3; margin: 0; padding: .6rem 0; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 0; }
+  .brand { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 700; color: #33241c; text-decoration: none; }
+  .brand span { color: #9a5b3c; }
+  .nav-links { display: flex; align-items: center; gap: 1.1rem; margin: 0; padding: 0; list-style: none; }
+  .nav-links a:not(.btn) { color: #4a3a30; text-decoration: none; font-size: .95rem; }
+  .nav-links a:not(.btn):hover { color: #9a5b3c; }
+  .btn-sm { padding: .45rem .9rem; font-size: .9rem; margin: 0; }
+  .hero { padding: 4.5rem 0 3rem; text-align: center; }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 4.2rem); margin-bottom: .4rem; }
+  .hero h1 em { color: #9a5b3c; font-style: normal; }
+  .tagline { color: #9a5b3c; font-size: 1.15rem; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 1rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin: 1.4rem 0 0; }
+  .chip { background: #f1e6da; color: #7a4a30; border-radius: 999px; padding: .3rem .85rem; font-size: .85rem; }
+  .lead { max-width: 42rem; margin: 0 auto; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1.8rem; }
+  .hero-actions a { margin: 0; }
+  section { padding: 3.2rem 0; }
+  section h2 { text-align: center; margin-bottom: .6rem; }
+  .kicker { display: block; text-align: center; color: #9a5b3c; font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; margin-bottom: .4rem; }
+  .card { background: #fffdf9; border: 1px solid #eadfd3; padding: 1.6rem; margin: 0; height: 100%; box-shadow: 0 6px 24px rgba(90,60,40,.06); }
+  .card h3 { margin-bottom: .5rem; }
+  .card .num { display: inline-block; color: #b08968; font-family: Georgia, serif; font-size: .9rem; letter-spacing: .2em; margin-bottom: .6rem; }
+  .price-line { margin-top: 1rem; padding-top: .9rem; border-top: 1px dashed #e3d5c6; font-size: .88rem; color: #7a6a5c; }
+  .price-line strong { color: #4a3428; }
+  .strip { background: #f1e6da; border-radius: var(--pico-border-radius); padding: 1.4rem 1.6rem; text-align: center; margin-top: 1.8rem; }
+  .strip p { margin: 0; }
+  .quote { font-family: Georgia, serif; font-size: 1.3rem; font-style: italic; color: #5c4433; text-align: center; max-width: 40rem; margin: 0 auto 1.6rem; }
+  .contact-card { background: #33241c; color: #f3ebe1; border-radius: var(--pico-border-radius); padding: 2.2rem; }
+  .contact-card h2, .contact-card h3 { color: #f7efe5; }
+  .contact-card a:not([role="button"]) { color: #e8c9a8; }
+  .contact-card [role="button"], .contact-card button { --pico-primary-hover: #b3703f; background: #9a5b3c; border-color: #9a5b3c; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.4rem; margin: 1.4rem 0; }
+  .contact-grid div h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: .12em; color: #cfa77e; margin-bottom: .4rem; }
+  .contact-grid p { margin: 0; color: #f3ebe1; }
+  footer.footer { border-top: 1px solid #eadfd3; padding: 2rem 0 2.5rem; color: #8a7668; font-size: .85rem; }
+  footer.footer a { color: #7a4a30; }
+  .foot-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+  .demo-note { background: #f1e6da; border-radius: .6rem; padding: .8rem 1rem; font-size: .8rem; margin-top: 1.2rem; }
+  @media (max-width: 640px) { .nav-links a:not(.btn) { display: none; } }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  section[id] { scroll-margin-top: 4.5rem; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">haarkult<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a class="btn-sm" role="button" href="https://www.vip-agenda.ch/clients/haarkult/" target="_blank" rel="noopener">Termin buchen</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container" id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="tagline">Naturcoiffeur · Luzern</p>
+    <h1>haarkult<em>.</em></h1>
+    <p class="lead">Wir gehen den natürlichen Weg – Ihrem Haar zuliebe und aus Überzeugung. Achtsames Coiffeurhandwerk mit auserlesenen Produkten aus der Natur in Bio-Qualität – mitten in Luzern, in zweiter Generation.</p>
+    <div class="chips">
+      <span class="chip">Seit 1967</span>
+      <span class="chip">100% Pflanzenfarben</span>
+      <span class="chip">Bio-Qualität</span>
+      <span class="chip">2. Generation</span>
+    </div>
+    <div class="hero-actions">
+      <a role="button" href="https://www.vip-agenda.ch/clients/haarkult/" target="_blank" rel="noopener">Online Termin buchen</a>
+      <a role="button" class="outline" href="tel:+41413604060">041 360 40 60</a>
+    </div>
+  </div>
+
+  <!-- ANGEBOT -->
+  <section id="angebot">
+    <span class="kicker">Unser Angebot</span>
+    <h2>Natürlich schön – mit Kompetenz seit 1967</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="num">01</span>
+        <h3>Pflanzenfarben</h3>
+        <p>100% Pflanzenfarbe in Bio-Qualität, mit der vieles möglich ist: ein wundervolles Farbenspiel, das die Natur durchscheinen lässt. Weisse Haare werden sanft gedeckt – für einen natürlichen Effekt von Hellblond bis Mittelbraun, in Nuancen von Beige und Gold über Kupfer bis Rot.</p>
+        <p class="price-line"><strong>Individuelle Beratung</strong> inklusive – lassen Sie sich beraten.</p>
+      </article>
+      <article class="card">
+        <span class="num">02</span>
+        <h3>Haarwuchsbehandlung</h3>
+        <p>Bei Haarverlust egal welcher Art: Wir bearbeiten Ihre Kopfhaut mit auserlesenen ayurvedischen Produkten, unserer Muskelkraft und der Lichttherapie – damit die Haare wieder spriessen.</p>
+        <p class="price-line"><strong>Quick</strong> 50 Min · CHF 90.–<br><strong>Standard</strong> 75 Min · CHF 130.–<br><strong>All in</strong> 90 Min · CHF 165.–</p>
+      </article>
+      <article class="card">
+        <span class="num">03</span>
+        <h3>Frisur &amp; Make-up</h3>
+        <p>Wir kreieren mit Ihnen zusammen Ihre Wunschfrisur und erarbeiten ein individuelles Make-up – natürlich oder intensiv. Unsere Pauschalangebote eignen sich für die unkomplizierte Vorbereitung Ihres schönsten Tages, für die Frau wie für den Mann.</p>
+        <p class="price-line"><strong>Pauschalangebote</strong> für Anlass &amp; Hochzeit – gerne beraten wir Sie individuell.</p>
+      </article>
+    </div>
+    <div class="strip">
+      <p><strong>Auch im Angebot:</strong> Farbtyp-Analyse – wir finden die Farben, die zu Ihnen passen. <a href="#kontakt">Vereinbaren Sie ein Beratungsgespräch →</a></p>
+    </div>
+  </section>
+
+  <!-- ÜBER UNS -->
+  <section id="ueber-uns">
+    <span class="kicker">Über uns</span>
+    <h2>Achtsam. Natürlich. Anders.</h2>
+    <p class="quote">«Hinter dem Wunsch der Veränderung durch eine neue Frisur steckt meist mehr, als man auf den ersten Blick erahnt. Wir nehmen uns die Zeit, diesen Wünschen auf den Grund zu gehen.»</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Verwurzelt in Luzern</h3>
+        <p>Seit 1967 pflegen wir das Haar unserer Gäste an der Tribschenstrasse – heute in zweiter Generation. Ein tief verankertes Know-how, gepaart mit viel Leidenschaft für dieses wundervolle Handwerk.</p>
+      </article>
+      <article class="card">
+        <h3>Natur statt Chemie</h3>
+        <p>Als Naturcoiffeur setzen wir auf auserlesene Produkte aus der Natur in Bio-Qualität: sanft zum Haar, sanft zur Kopfhaut – und gut für die Umwelt.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="contact-card">
+      <span class="kicker" style="color:#cfa77e;">Kontakt</span>
+      <h2>Termin buchen – so einfach geht's</h2>
+      <p style="max-width:38rem;">Online in wenigen Klicks, oder direkt am Telefon. Wir freuen uns auf Sie!</p>
+      <div class="contact-grid">
+        <div>
+          <h3>Adresse</h3>
+          <p>haarkult GmbH<br>Tribschenstrasse 30<br>6005 Luzern<br><a href="https://www.google.com/maps/search/?api=1&query=Tribschenstrasse+30,+6005+Luzern" target="_blank" rel="noopener">Route planen →</a></p>
+        </div>
+        <div>
+          <h3>Telefon</h3>
+          <p><a href="tel:+41413604060">041 360 40 60</a></p>
+        </div>
+        <div>
+          <h3>E-Mail</h3>
+          <p><a href="mailto:kontakt@haarkult.ch">kontakt@haarkult.ch</a></p>
+        </div>
+      </div>
+      <div class="hero-actions" style="justify-content:flex-start;">
+        <a role="button" href="https://www.vip-agenda.ch/clients/haarkult/" target="_blank" rel="noopener">Jetzt online Termin buchen</a>
+        <a role="button" class="outline" style="--pico-color:#f3ebe1;" href="tel:+41413604060">041 360 40 60</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <p style="margin:0;">© 2026 haarkult GmbH · Tribschenstrasse 30 · 6005 Luzern<br>
+      <a href="https://www.haarkult.ch/Impressum/Datenschutz/" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a> ·
+      <a href="https://www.facebook.com/p/haarkult-100058075194323" target="_blank" rel="noopener">Facebook</a> ·
+      <a href="https://www.instagram.com/haarkult1967" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+    <p class="demo-note">Demo-Website: unverbindlicher Design-Vorschlag, erstellt von Olaf. Die endgültige Website würde selbstverständlich ein vollständiges Impressum und eine Datenschutzerklärung gemäss Schweizer Recht enthalten.</p>
+  </div>
+</footer>
+
+</body>
+</html>
